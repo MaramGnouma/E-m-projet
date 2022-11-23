@@ -1,0 +1,22 @@
+.active{
+    text-decoration: underline;
+        color: #472f39;
+        text-decoration: none;
+}
+.menu{
+    background-color:#e8e0d5;
+}
+#logo{
+        color:  #a4806e;
+       border-radius: 25%;
+}
+.boutton{
+    padding: 10px;
+    background-color:#b96662;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+    

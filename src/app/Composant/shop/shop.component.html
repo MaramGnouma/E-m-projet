@@ -1,0 +1,215 @@
+<div class="container">
+  <div class="bloc1">
+      <div>
+          <h3 class="title" style="text-align:center; padding-left: 22px;color: #b96662;">Votre partenaire de confiance pour acheter des alimentations et accessoires pour   votre chiot, chaton ou animal abandonné. </h3>
+          <p> Un bon aliment et un bon accessoire pour chiens/chats doit pouvoir faire bien plus que simplement rassasier votre animal. C'est pourquoi nous produisons nos aliments naturels pour chiens et chats pour garder votre ami à quatre pattes actif et en bonne santé . En outre Tous les accessoires pour animaux nécessaires pour la distribution, les éleveurs et les pensions. Chaque marque est durable et de haute qualité. Découvrez notre assortimentet choisissez ce qui vous convient le mieux.</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button (click)="transformation(1)" class="boutton" style="width:225"> <a class="nav-link" routerLinkActive="active" routerLink="/alimentation">Alimentation </a></button>
+        <button (click)="transformation(2)" class="boutton"><a class="nav-link" routerLinkActive="active" routerLink="/produits"> Accessoires </a></button>
+      </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div *ngFor="let pr of Alim"  class="col-sm-4">
+      <div class="card box imaget" style="width: 18rem;">
+          <img [src]="pr.photo" class="card-img-top p-2" alt="..." height="250px" width="900px">
+          <div class="card-body">
+                  <h5 class="card-title">{{pr.libelle}}</h5>
+                  <i class="fa fa-star" style="color: orange; width:11;"></i>
+                          <i class="fa fa-star" style="color: orange;;"></i>
+                          <i class="fa fa-star" style="color: orange;"></i>
+                          <i class="fa fa-star" style="color: orange;"></i>
+                          <i class="fa fa-star" style="color: black;"></i>
+                          <br>
+                  <p class="card-text">Prix:{{pr.prix}}DT</p>
+                  <span class="badge text-bg-secondary" *ngIf="pr.disponible==true">Disponible</span> 
+                  <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                  <button type="button" class="btn btn-primary container" [routerLink]="['/alimentation',pr.id]" > Détail 
+                      </button>
+              </div>
+          </div>
+        <br>
+          </div>
+  </div>
+
+  <div class="row"> 
+     
+    <div *ngFor="let p of lesProduits"  class="col-sm-4">
+      <div class="card box imaget" style="width: 18rem;">
+          <img [src]="p.photo" class="card-img-top p-2" alt="..." height="250px" width="900px">
+          <div class="card-body">
+                  <h5 class="card-title">{{p.libelle}}</h5>
+                  <i class="fa fa-star" style="color: orange; width:11;"></i>
+                          <i class="fa fa-star" style="color: orange;;"></i>
+                          <i class="fa fa-star" style="color: orange;"></i>
+                          <i class="fa fa-star" style="color: orange;"></i>
+                          <i class="fa fa-star" style="color: black;"></i>
+                          <br>
+                  <p class="card-text">Prix:{{p.prix| number:'.3'|money}}</p>
+                  <span class="badge text-bg-secondary" *ngIf="p.disponible==true">Disponible</span> 
+                  <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                  <div>
+                      <button type="button" class="btn btn-primary mr-5" [routerLink]="['/alimentation', p.id]" > Détail 
+                      </button> 
+                      <button type="button" class="btn btn-primary" style="margin-left:5px" [routerLink]="['/panier']" >Add to panier
+                      </button>
+                  </div>
+              </div>
+          </div>
+        <br>
+          </div>
+             
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+<h1 class="title" style="text-align:center; padding-left: 22px;color: #b96662; margin-top: 10px;"> Nos Produits </h1>
+<p>
+  Un bon aliment et un bon accessoire pour chiens/chats doit pouvoir faire bien plus que simplement rassasier votre animal. C'est pourquoi nous produisons nos aliments naturels pour chiens et chats pour garder votre ami à quatre pattes actif et en bonne santé . En outre Tous les accessoires pour animaux nécessaires pour la distribution, les éleveurs et les pensions. Chaque marque est durable et de haute qualité. Découvrez notre assortimentet choisissez ce qui vous convient le mieux.
+</p>
+<div class="d-flex justify-content-center">
+  <button (click)="transformation(1)" class="boutton" style="width:225"> <a class="nav-link" routerLinkActive="active" routerLink="/alimentation">Alimentation </a></button>
+  <button (click)="transformation(2)" class="boutton"><a class="nav-link" routerLinkActive="active" routerLink="/produits"> Accessoires </a></button>
+</div>
+  
+</div>
+<!--<div class="row row-cols-1 row-cols-md-3 g-4  box" style="margin-left: 300px;margin-top: 20px;">
+    <div class="col">
+      <div class="card h-100 imaget">
+        <img src="assets/images/alim.png" class="card-img-top p-2 " alt="..." height="250px" width="900px">
+        <div class="card-body">
+            <h5 class="card-title center">Alimentation</h5>
+            <p class="card-text">Un bon aliment pour chiens doit pouvoir faire bien plus que simplement rassasier votre animal. C'est pourquoi nous produisons nos aliments naturels pour chiens et chats pour garder votre ami à quatre pattes actif et en bonne santé.</p>
+            <button type="button" class="btn btn-primary container"> <a class="nav-link" routerLinkActive="active" routerLink="/alimentation">Explorer notre assortimente</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 box imaget">
+        <img src="assets/images/acc.jpg" class="card-img-top p-2" alt="..." height="250px" width="900px">
+            <div class="card-body">
+                    <h5 class="card-title center">Accessoires</h5>
+                    <p class="card-text">Tous les accessoires pour animaux nécessaires pour la distribution, les éleveurs et les pensions. Chaque marque est durable et de haute qualité. Découvrez notre assortimentet choisissez ce qui vous convient le mieux.</p>
+                    <button type="button" class="btn btn-primary container"> <a class="nav-link" routerLinkActive="active" routerLink="/produits">Explorer notre assortimentet</a></button>
+      </div>
+    </div>
+   
+    </div>
+  </div>-->
+  <!--<div class="row" *ngIf="afficher==1">  
+      <div *ngFor="let pr of Alim"  class="col-sm-4">
+          <div class="card box imaget" style="width: 18rem;">
+              <img [src]="pr.photo" class="card-img-top p-2" alt="..." height="250px" width="900px">
+              <div class="card-body">
+                      <h5 class="card-title">{{pr.libelle}}</h5>
+                      <i class="fa fa-star" style="color: orange; width:11;"></i>
+                              <i class="fa fa-star" style="color: orange;;"></i>
+                              <i class="fa fa-star" style="color: orange;"></i>
+                              <i class="fa fa-star" style="color: orange;"></i>
+                              <i class="fa fa-star" style="color: black;"></i>
+                              <br>
+                      <p class="card-text">Prix:{{pr.prix}}DT</p>
+                      <span class="badge text-bg-secondary" *ngIf="pr.disponible==true">Disponible</span> 
+                      <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                      <button type="button" class="btn btn-primary container" [routerLink]="['/alimentation',pr.id]" > Détail 
+                          </button>
+                  </div>
+              </div>
+            <br>
+              </div>
+  </div>
+
+<div class="row" *ngIf="afficher==2"> 
+   
+  <div *ngFor="let p of Alim"  class="col-sm-4">
+    <div class="card box imaget" style="width: 18rem;">
+        <img [src]="p.photo" class="card-img-top p-2" alt="..." height="250px" width="900px">
+        <div class="card-body">
+                <h5 class="card-title">{{p.libelle}}</h5>
+                <i class="fa fa-star" style="color: orange; width:11;"></i>
+                        <i class="fa fa-star" style="color: orange;;"></i>
+                        <i class="fa fa-star" style="color: orange;"></i>
+                        <i class="fa fa-star" style="color: orange;"></i>
+                        <i class="fa fa-star" style="color: black;"></i>
+                        <br>
+                <p class="card-text">Prix:{{p.prix| number:'.3'|money}}</p>
+                <span class="badge text-bg-secondary" *ngIf="p.disponible==true">Disponible</span> 
+                <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                <div>
+                    <button type="button" class="btn btn-primary mr-5" [routerLink]="['/alimentation', p.id]" > Détail 
+                    </button> 
+                    <button type="button" class="btn btn-primary" style="margin-left:5px" [routerLink]="['/panier']" >Add to panier
+                    </button>
+                </div>
+            </div>
+        </div>
+      <br>
+        </div>
+</div>
+
+<div class="row" *ngIf="afficher==0"> 
+      <div *ngFor="let p of Alim "  class="col-sm-4">
+        <div class="card box imaget" style="width: 18rem;">
+            <img [src]="p.photo" class="card-img-top p-2" alt="..." height="250px" width="900px">
+            <div class="card-body">
+                    <h5 class="card-title">{{p.libelle}}</h5>
+                    <i class="fa fa-star" style="color: orange; width:11;"></i>
+                            <i class="fa fa-star" style="color: orange;;"></i>
+                            <i class="fa fa-star" style="color: orange;"></i>
+                            <i class="fa fa-star" style="color: orange;"></i>
+                            <i class="fa fa-star" style="color: black;"></i>
+                            <br>
+                    <p class="card-text">Prix:{{p.prix| number:'.3'|money}}</p>
+                    <span class="badge text-bg-secondary" *ngIf="p.disponible==true">Disponible</span> 
+                    <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                    <div>
+                        <button type="button" class="btn btn-primary mr-5" [routerLink]="['/alimentation', p.id]" > Détail 
+                        </button> 
+                        <button type="button" class="btn btn-primary" style="margin-left:5px" [routerLink]="['/panier']" >Add to panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+          <br>
+            </div>
+
+</div>-->
+

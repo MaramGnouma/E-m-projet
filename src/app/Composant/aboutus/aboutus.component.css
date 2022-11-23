@@ -1,0 +1,93 @@
+.vidoo{
+    width: 50px;
+    height: 100px;
+}
+.test{
+    background-color:#e8e0d5;
+}
+.id1{
+   
+    color: #7a7878;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1{
+    color:#b96662;
+    text-align: center;
+}
+
+.card:hover{
+    box-shadow:  4px 4px #57483c  ;
+    transform: scale(1.05);
+    transition: .5s;
+    
+}
+
+  
+
+.c1{
+    width: 300px;
+    height: 17px;
+    background-color:#bc9a89 ;
+    border-radius:5px;
+    
+}
+.position{
+    padding-left:84px;
+}
+
+
+.c3{
+    color: #a48267;
+    padding-left: 305px;
+}
+.title
+{
+    color: #a48267;
+    padding-bottom: 9px;
+
+}
+
+.c2{
+border-radius: 5px;
+background-color: #78533d
+}
+
+h4{
+    color: rgb(194, 147, 90);
+}
+.positions{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: baseline;
+}
+
+  /* Video*/
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+  }
+
+  #myVideo {
+    right: 0;
+    bottom: 0;
+   min-width:100%;
+   min-height:100%;
+  
+  }
+  
+  .content {
+   
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  
