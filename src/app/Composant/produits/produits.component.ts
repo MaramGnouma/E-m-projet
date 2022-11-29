@@ -15,5 +15,6 @@ export class ProduitsComponent implements OnInit {
     this.produitService.getProduits().subscribe (data => this.lesProduits = data)
    
   }
+  
 
 }

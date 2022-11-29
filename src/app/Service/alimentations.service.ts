@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Alimentation } from '../alimentationclass/alimentation';
 import { Produit } from '../Produitclass/produit';
-const URL2= 'http://localhost:3200/alimentations';
+const URL2= 'http://localhost:5000/alimentations';
+const URL3 = 'http://localhost:3000/nouveauxalim';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +15,25 @@ export class AlimentationsService {
 getAlimentation(): Observable<Alimentation[]> {
   return this.http.get<Alimentation[]>(URL2);
 }
+getAlimentationnouv(): Observable<Alimentation[]> {
+  return this.http.get<Alimentation[]>(URL3);
+}
 getalimentationById(id: number): Observable<Alimentation> {
   return this.http.get<Alimentation>(URL2+'/'+id);
 }
-
-/*getProduits(): Observable<Produit[]> {
-  return this.http.get<Produit[]>(URL);
+getalimentationnouvById(id: number): Observable<Alimentation> {
+  return this.http.get<Alimentation>(URL3+'/'+id);
 }
-getProduitsById(id: number): Observable<Produit> {
-  return this.http.get<Produit>(URL+'/' +id);
+ajouteralim(alims:Alimentation):Observable<Alimentation>{
+  return this.http.post<Alimentation>(URL2, alims);
+}
+
+/*ajouteralim(alim:Alimentation):Observable<Alimentation>{
+  return this.http.post<Alimentation>(URL2, alim);
 }*/
+supprimerAlim( id:number)
+{
+  return this.http.delete(URL2+"/"+id);
+
+}
 }

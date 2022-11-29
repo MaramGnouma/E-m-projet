@@ -21,6 +21,10 @@ import { SelectedProduitComponent } from './Composant/selected-produit/selected-
 import { SelectedalimComponent } from './Composant/selectedalim/selectedalim.component';
 import { CartComponent } from './Composant/cart/cart.component';
 import { SelectedAnimalComponent } from './Composant/selected-animal/selected-animal.component';
+import { ListeProduitComponent } from './Admin/liste-produit/liste-produit.component';
+import { ListAnimalComponent } from './Admin/list_animal/list-animal/list-animal.component';
+import { AjouterComponent } from './Admin/ajouter/ajouter.component';
+import { AjouteralimComponent } from './Admin/ajouteralim/ajouteralim.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +43,10 @@ import { SelectedAnimalComponent } from './Composant/selected-animal/selected-an
     SelectedalimComponent,
     CartComponent,
     SelectedAnimalComponent,
+    ListeProduitComponent,
+    ListAnimalComponent,
+    AjouterComponent,
+    AjouteralimComponent,
   ],
   imports: [
     BrowserModule,

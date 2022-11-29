@@ -1,5 +1,6 @@
+
 <div>
-<div class=" acc">
+<div class=" acc"  style="margin-top: 100px;">
     <div>
         <img class="font" src="assets/animals/home1.jpg" alt="">
     </div>
@@ -100,6 +101,57 @@
       </div>
 <button class="boutton" (click)="onAfficher()">Ajouter un commentaire</button>
 <button class="boutton" (click)="onVider()">Vider</button>
+<div style="padding-bottom: 50px;"> 
+</div>
 </form>
 </div>
 </div>
+
+<div style="display: flex; justify-self: unset;padding-left: 600px;padding-top: 50px; background-color: beige;">
+    <img src="assets/logo11.png" width="90" height="70" style=" background-color: beige;"/>
+    <h2 style=" background-color: beige;">Nouveaux Accessoires</h2>
+</div>
+<div class="images back">
+
+<!---
+    <div class="imaget" *ngFor="let pr of Alim">
+        <div><img [src]="pr.photo" class="card-img-top p-2" width="250" height="200"></div>
+        <div style="margin-left: 20px;">
+            <h3 class="producttitle">{{pr.libelle}}</h3>
+
+            <i class="fa fa-star" style="color: orange; width:11;"></i>
+            <i class="fa fa-star" style="color: orange;;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <br>
+            <div class="pricee"> Prix:<span class="price">{{pr.prix}}</span>DT </div>
+            <span class="badge text-bg-secondary" *ngIf="pr.disponible==true">Disponible</span> 
+                  <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                  <button type="button" class="btn btn-primary" [routerLink]="['/accueil',pr.id]" style="background-color: blue"> Détail 
+                      </button>
+        </div>
+    </div>-->
+    <div class="imaget" *ngFor="let p of lesProduits">
+        <div><img [src]="p.photo" class="card-img-top p-2" width="250" height="200"></div>
+        <div style="margin-left: 20px;">
+            <h3 class="producttitle">{{p.libelle}}</h3>
+
+            <i class="fa fa-star" style="color: orange; width:11;"></i>
+            <i class="fa fa-star" style="color: orange;;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <i class="fa fa-star" style="color: black;"></i>
+            <br>
+            <div class="pricee"> Prix:<span class="price">{{p.prix}}</span>DT </div>
+            <span class="badge text-bg-secondary" *ngIf="p.disponible==true">Disponible</span> 
+                  <span class="badge text-bg-secondary m-4">Commander</span> <br> <br> 
+                  <button type="button" class="btn btn-primary" [routerLink]="['/accueil', p.id]" style="background-color: blue"> Détail 
+                      </button>
+                      <button type="button" class="btn btn-primary" style="margin-left:5px" [routerLink]="['/panier']" style="background-color: blue" >Add to panier
+                    </button>
+        </div>
+    </div>
+    </div>
+
+    

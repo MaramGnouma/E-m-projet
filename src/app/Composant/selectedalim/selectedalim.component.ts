@@ -20,9 +20,9 @@ export class SelectedalimComponent implements OnInit {
   ngOnInit(): void {
     this.idAlim = this.activatetRoute.snapshot.params['id'];
 
-    this.alimentationsService
-   .getalimentationById(this.idAlim)
-    .subscribe((data) => (this.alimentation = data));
+    this.alimentationsService.getalimentationById(this.idAlim).subscribe((data) => (this.alimentation = data));
+
+    this.alimentationsService.getalimentationnouvById(this.idAlim).subscribe((data) => (this.alimentation = data));
     
 
 }
