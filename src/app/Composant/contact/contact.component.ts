@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Contactclass } from 'src/app/contactclass';
+import { ContactservService } from 'src/app/Service/contactserv.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
+  lesproduits!:Contactclass[];
   inscrireForm!:FormGroup;
-  constructor( private fb:FormBuilder) { }
+  constructor( private fb:FormBuilder,private servcont:ContactservService) { }
   lesVilles: string[] = [
     'Tunis', 'Ariana', 'Ben arous' ,'Manouba','Bizerte', 'Sousse', 'Sfax' ,'nabeul' ,'Mahdia' , 'Zaghouan' , 'Beja' ,'Kef' ,'Jendouba' 
     ,' Kasserine' , 'Gabes','Tozeur' ,'Monastir' , 'Kebelli', 'Sidi bouzid' ,'Gafsa','Medenine','Tataouin','Kairouan'];
@@ -25,8 +27,11 @@ this.inscrireForm=this.fb. nonNullable.group({
 onReset(){
   this.inscrireForm.reset();
   }
-  onSubmitForm() {
-    
+  ajouterctc() {
+    this.servcont.ajouterctc(this.inscrireForm.value).subscribe(data=>this.lesproduits.push(data));
+    this.onReset();
+    alert("ajout true");
+
   }
 }
 

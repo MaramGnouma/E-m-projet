@@ -12,7 +12,7 @@
            <p class="card-text">Materiel:{{produit.materiel}}</p>
           <p class="card-text">Dimension:{{produit.dimension}}</p>
           <form [formGroup]="employeForm">
-            <h5>Liste des diplômes de l'employé</h5>
+            <h5>Liste des Commentaires des Clients</h5>
         <div formArrayName="diplomes">
             <div *ngFor="let d of lesDiplomes.controls; index as i">
                 <strong> Commentaire n° {{i+1}}</strong>
@@ -27,7 +27,8 @@
                 </div>
             </div>
         </div>
-        <input type="button" (click)="ajouterDiplome()" value="Ajouter un Diplôme" class="btn btn-secondary btn-sm" > <br>
+        <input type="button" (click)="ajouterDiplome()" value="Ajouter un Commentaire" class="btn btn-secondary btn-sm" > <br>
+        <input type="button"  value="Enregistrer un Commentaire" class="btn btn-secondary btn-sm" > <br>
           </form>
           <button  type="button" class="btn btn-primary m-5" routerLinkActive="active" routerLink="/produits">Retour</button> 
         </div>

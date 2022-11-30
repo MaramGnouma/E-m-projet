@@ -15,9 +15,11 @@ import { CartComponent } from './Composant/cart/cart.component';
 import { ListeProduitComponent } from './Admin/liste-produit/liste-produit.component';
 import { AjouterComponent } from './Admin/ajouter/ajouter.component';
 import { AjouteralimComponent } from './Admin/ajouteralim/ajouteralim.component';
+import { ModifierComponent } from './Admin/modifier/modifier.component';
 
 const routes: Routes = [
   {path:'accueil',title:'Accueil', component:AccueilComponent},
+  {path:'modifier',title:'Accueil', component:ModifierComponent},
   {path:'shop',title:'shop', component:ShopComponent},
   {path:'produits/:id',title:'Produit choisit', component:SelectedProduitComponent},
   {path:'liste',title:'Produit choisit', component:ListeProduitComponent},

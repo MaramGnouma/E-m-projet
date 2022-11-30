@@ -131,17 +131,6 @@
       "color": "Blanc & gris",
       "prix": 55.5,
       "cat": "Accessoires"
-    },
-    {
-      "id": 445,
-      "libelle": "jjj",
-      "prix": 45,
-      "disponible": false,
-      "photo": "sss",
-      "color": "jjj",
-      "materiel": "hhh",
-      "brand": "fff",
-      "dimension": "hhh"
     }
   ],
   "nouveauxprod": [

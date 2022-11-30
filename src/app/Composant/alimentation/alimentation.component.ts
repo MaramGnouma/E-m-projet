@@ -14,6 +14,7 @@ export class AlimentationComponent implements OnInit {
   constructor(private alimService:AlimentationsService) { }
 
   ngOnInit(): void {
+  
  this.alimService.getAlimentation().subscribe (data => this.Alim = data)
    
   }

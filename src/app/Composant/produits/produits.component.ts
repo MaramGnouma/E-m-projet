@@ -9,12 +9,17 @@ import { ProduitservService } from 'src/app/Service/produitserv.service';
 })
 export class ProduitsComponent implements OnInit {
   lesProduits!:Produit[];
+  load:boolean=false;
   constructor(private produitService:ProduitservService) { }
 
   ngOnInit(): void {
+    
+    this.load=true;
     this.produitService.getProduits().subscribe (data => this.lesProduits = data)
+      this.load=false;
    
   }
+
   
 
 }

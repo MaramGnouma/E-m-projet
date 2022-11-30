@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Alimentation } from 'src/app/alimentationclass/alimentation';
 import { Produit } from 'src/app/Produitclass/produit';
 import { AlimentationsService } from 'src/app/Service/alimentations.service';
@@ -13,21 +13,24 @@ import { ProduitservService } from 'src/app/Service/produitserv.service';
 export class ListeProduitComponent implements OnInit {
  lesproduits!:Produit[];
  lesalim!:Alimentation[];
- prodForm!:FormGroup;
+// prodForm!:FormGroup;
+prodForm = new FormGroup({
+  id:new FormControl(0),
+  libelle:new FormControl(0),
+  prix:new FormControl(0),
+  disponible:new FormControl(''),
+  photo:new FormControl(''),
+  color:new FormControl(''),
+  materiel:new FormControl(''),
+  brand:new FormControl(''),
+  dimension:new FormControl(0),
+  commentaire: new FormControl('')
+})
   constructor(private produitservice:ProduitservService,private alimservice:AlimentationsService,private form:FormBuilder) { }
 
   ngOnInit(): void {
-    this.prodForm = this.form.nonNullable.group({
-      id:[0],
-      libelle:[0],
-      prix:[0],
-      disponible:false,
-      photo:[''],
-      color:[''],
-      materiel:[''],
-      brand:[''],
-      dimension:['']
-    })
+   
+
     this.produitservice.getProduits().subscribe (data => this.lesproduits = data)
     this.alimservice.getAlimentation().subscribe (data => this.lesalim = data)
   }
@@ -57,8 +60,17 @@ export class ListeProduitComponent implements OnInit {
     onmodifier(id:number, prod:Produit){
       this.produitservice.modifier(id,prod);
     }
-    Ajouter() {
+   /* Ajouter() {
       this.produitservice.ajouteracces(this.prodForm.value).subscribe(data=>this.lesproduits.push(data));
-    }
+      this.onReset();
+    }*/
+    onReset(){
+      this.prodForm.reset();
+      }
+      editCommande(lesproduits){
+        this.prodForm= lesproduits;
+      }
+ }
+   
 
-}
+

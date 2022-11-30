@@ -25,6 +25,8 @@ import { ListeProduitComponent } from './Admin/liste-produit/liste-produit.compo
 import { ListAnimalComponent } from './Admin/list_animal/list-animal/list-animal.component';
 import { AjouterComponent } from './Admin/ajouter/ajouter.component';
 import { AjouteralimComponent } from './Admin/ajouteralim/ajouteralim.component';
+import { ModifierComponent } from './Admin/modifier/modifier.component';
+import { SpinnerComponent } from './Composant/spinner/spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +49,8 @@ import { AjouteralimComponent } from './Admin/ajouteralim/ajouteralim.component'
     ListAnimalComponent,
     AjouterComponent,
     AjouteralimComponent,
+    ModifierComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
