@@ -133,16 +133,15 @@
       "cat": "Accessoires"
     },
     {
-      "id": 12,
-      "libelle": "CAT SCRAPERS NATURAL MAGNOLIA",
-      "photo": "assets/images/catjouet.jpg",
-      "dimension": "45X45X90",
-      "brand": "CROCI",
-      "materiel": "Bois & Frondes ",
-      "disponible": true,
-      "color": "Maron",
-      "prix": 99.5,
-      "cat": "Accessoires"
+      "id": 445,
+      "libelle": "jjj",
+      "prix": 45,
+      "disponible": false,
+      "photo": "sss",
+      "color": "jjj",
+      "materiel": "hhh",
+      "brand": "fff",
+      "dimension": "hhh"
     }
   ],
   "nouveauxprod": [

@@ -31,6 +31,7 @@ export class AjouterComponent implements OnInit {
   }
   Ajouter() {
     this.produitservice.ajouteracces(this.prodForm.value).subscribe(data=>this.lesproduits.push(data));
+    alert("ajout true");
   }
 
 }

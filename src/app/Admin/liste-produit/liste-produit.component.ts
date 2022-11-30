@@ -34,11 +34,25 @@ export class ListeProduitComponent implements OnInit {
  /*AjouterAlim() {
     this.alimservice.ajouteralim(this.LivreForm.value).subscribe(data=>this.Leslivres.push(data));
   }*/
-  onSupprimer(id:number){
-    this.produitservice.supprimeracess(id).subscribe();
+  // onSupprimer(id:number){
+  //   this.produitservice.supprimeracess(id).subscribe();
+  // }
+  // onSupprime(id:number){
+  //   this.alimservice.supprimerAlim(id).subscribe();
+  // }
+
+  supprimer(produit: Produit) {
+    this.produitservice
+      .supprimeracess(produit.id)
+      .subscribe(
+        (data) => (this.lesproduits = this.lesproduits.filter((e) => e.id != produit.id))
+      );
   }
-  onSupprime(id:number){
-    this.alimservice.supprimerAlim(id).subscribe();
+  supprimeralim(alim: Alimentation) {
+    this.alimservice.supprimerAlim(alim.id)
+      .subscribe(
+        (data) => (this.lesalim = this.lesalim.filter((e) => e.id != alim.id))
+      );
   }
     onmodifier(id:number, prod:Produit){
       this.produitservice.modifier(id,prod);

@@ -19,7 +19,7 @@
                 <td> {{pr.prix}}</td>
                 <td> <input type="checkbox"  disabled>Nouveau</td>
                 <td> <input type="button" value="Modifier" class="btn btn-warning" ></td>
-                <td> <input type="button" value="Supprimer" class="btn btn-info" (click)="onSupprimer(pr.id)" ></td>
+                <td> <input type="button" value="Supprimer" class="btn btn-info" (click)="supprimer(pr)" ></td>
             </tr>    
         </tbody>
     </table>
@@ -45,7 +45,7 @@
                 <td> {{p.prix}}</td>
                 <td> <input type="checkbox"  disabled>Nouveau</td>
                 <td> <input type="button" value="Modifier" class="btn btn-warning" ></td>
-                <td> <input type="button" value="Supprimer" class="btn btn-info"  (click)="onSupprime(p.id)"></td>
+                <td> <input type="button" value="Supprimer" class="btn btn-info" (click)="supprimeralim(p)"  ></td>
             </tr>    
         </tbody>
     </table>

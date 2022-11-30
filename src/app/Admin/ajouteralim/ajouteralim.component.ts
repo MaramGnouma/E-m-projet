@@ -32,5 +32,6 @@ export class AjouteralimComponent implements OnInit {
   }
   Ajouter() {
     this.alimservice.ajouteralim(this.prodForm.value).subscribe(data=>this.lesalim.push(data));
+    alert("ajout true");
   }
 }
