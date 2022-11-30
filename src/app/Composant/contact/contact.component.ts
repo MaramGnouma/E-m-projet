@@ -17,20 +17,20 @@ export class ContactComponent implements OnInit {
     ,' Kasserine' , 'Gabes','Tozeur' ,'Monastir' , 'Kebelli', 'Sidi bouzid' ,'Gafsa','Medenine','Tataouin','Kairouan'];
   ngOnInit(): void {
 this.inscrireForm=this.fb. nonNullable.group({
-  nom:"",
-   datedenais: "",
-   tel: "",
-   email:"",
-   sexe:"",
-   adresse:""}) 
+  nom:[''],
+   datedenais: [''],
+   tel: [''],
+   email:[''],
+   sexe:[''],
+   adresse:['']}) 
 }
 onReset(){
   this.inscrireForm.reset();
   }
   ajouterctc() {
     this.servcont.ajouterctc(this.inscrireForm.value).subscribe(data=>this.lesproduits.push(data));
-    this.onReset();
     alert("ajout true");
+    this.onReset();
 
   }
 }
